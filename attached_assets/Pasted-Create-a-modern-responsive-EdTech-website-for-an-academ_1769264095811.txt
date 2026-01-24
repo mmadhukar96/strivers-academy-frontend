@@ -1,0 +1,90 @@
+Create a modern, responsive EdTech website for an academy named "Strivers Academy".
+
+Tech Stack:
+- Frontend: HTML, CSS, JavaScript (use clean, well-structured code)
+- Optional: React if suitable, otherwise plain HTML/CSS/JS
+- Mobile-first, responsive design
+
+Brand Identity:
+- Name: Strivers Academy
+- Theme: Futuristic, kid-friendly, tech-focused
+- Color palette: Electric Blue, Neon Cyan, Purple gradient, White background
+- Font style: Modern sans-serif (Poppins / Inter / Montserrat)
+- Smooth hover effects and subtle animations
+
+Logo:
+- Central “S” tech-style logo (already available, keep placeholder image)
+
+Target Audience:
+- Students aged 8–16
+- Parents looking for future-ready skills
+- Schools (future expansion)
+
+Core Programs (create sections/cards for each):
+1. Coding
+2. Robotics
+3. Generative AI (GAI)
+4. 3D Modelling
+5. AR / VR
+
+Pages to Create:
+1. Home
+2. Programs
+3. Methodology
+4. Founder
+5. Book Free Trial
+6. Contact
+
+Homepage Content:
+- Hero section headline:
+  "Building Future Innovators Through Coding, Robotics & AI"
+- Subheading:
+  "Empowering young minds with hands-on learning in Coding, Robotics, Generative AI, 3D Modelling, and AR/VR."
+- Call-to-action buttons:
+  "Book a Free Trial"
+  "Explore Programs"
+
+Programs Page:
+- Cards explaining each program with icons and short descriptions
+
+Methodology Page:
+- Steps:
+  1. Concept Understanding
+  2. Hands-on Practice
+  3. Real Projects
+  4. Problem Solving
+  5. Presentation & Creativity
+
+Founder Page:
+- Founder Name: Mayank Madhukar
+- Title: Generative AI Educator | STEM & Robotics Specialist
+- Short bio highlighting:
+  - Global teaching experience (CBSE, SEAB, IGCSE)
+  - Expertise in AI, Robotics, Coding
+  - Project-based learning approach
+
+Book Free Trial Page:
+- Simple form with:
+  - Student Name
+  - Age
+  - Parent Contact
+  - Program Interest
+- Submit button (no backend needed, frontend only)
+
+Contact Page:
+- Email: strivers.academy11@gmail.com
+- Phone: +91-9877110438
+- Location: Noida, Uttar Pradesh
+
+UX Requirements:
+- Clean navigation bar
+- Sticky header
+- Footer with social icons (placeholders)
+- Accessible color contrast
+- Professional but friendly tone
+
+Output Requirements:
+- Fully working frontend code
+- Separate files (index.html, styles.css, script.js)
+- Well-commented code
+- Ready to deploy on Replit
