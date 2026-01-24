@@ -1,0 +1,78 @@
+import { motion } from "framer-motion";
+import { Lightbulb, Cog, Layout, Target, Presentation } from "lucide-react";
+
+export default function Methodology() {
+  const steps = [
+    {
+      icon: <Lightbulb className="w-8 h-8 text-yellow-500" />,
+      title: "Concept Understanding",
+      desc: "Deep dive into the fundamental theories and logic behind the technology."
+    },
+    {
+      icon: <Cog className="w-8 h-8 text-blue-500" />,
+      title: "Hands-on Practice",
+      desc: "Interactive exercises and guided tutorials to build muscle memory and confidence."
+    },
+    {
+      icon: <Layout className="w-8 h-8 text-purple-500" />,
+      title: "Real Projects",
+      desc: "Students build fully functional projects like games, robots, or AI models."
+    },
+    {
+      icon: <Target className="w-8 h-8 text-red-500" />,
+      title: "Problem Solving",
+      desc: "Debugging challenges and optimization tasks to develop critical thinking."
+    },
+    {
+      icon: <Presentation className="w-8 h-8 text-green-500" />,
+      title: "Presentation & Creativity",
+      desc: "Showcasing projects to peers and mentors to build communication skills."
+    }
+  ];
+
+  return (
+    <div className="pt-24 pb-20 min-h-screen">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-20">
+          <h1 className="font-heading text-4xl font-bold mb-6">Our Methodology</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            A structured, proven 5-step approach to ensure deep learning and practical application.
+          </p>
+        </div>
+
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical Line */}
+          <div className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-1 bg-slate-200 -translate-x-1/2 hidden md:block" />
+
+          <div className="space-y-12">
+            {steps.map((step, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className={`flex flex-col md:flex-row items-center gap-8 ${
+                  idx % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                <div className="flex-1 text-center md:text-left">
+                  <div className={`p-6 rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-xl transition-shadow ${idx % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
+                    <h3 className="font-heading text-xl font-bold mb-2 text-slate-900">{step.title}</h3>
+                    <p className="text-muted-foreground">{step.desc}</p>
+                  </div>
+                </div>
+
+                <div className="relative z-10 w-12 h-12 rounded-full bg-white border-4 border-slate-100 flex items-center justify-center shadow-lg shrink-0">
+                  <div className="scale-75 transform">{step.icon}</div>
+                </div>
+
+                <div className="flex-1 hidden md:block" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
