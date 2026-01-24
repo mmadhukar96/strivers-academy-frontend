@@ -65,6 +65,13 @@
   --radius: 1rem;
 }
 
+/* Ensure the app is visible even if themes fail */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: hsl(var(--background));
