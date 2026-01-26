@@ -5,28 +5,28 @@ export default function Methodology() {
   const steps = [
     {
       icon: <Lightbulb className="w-8 h-8 text-yellow-500" />,
-      title: "Concept Understanding",
-      desc: "Deep dive into the fundamental theories and logic behind the technology."
+      title: "Initial Skill Assessment",
+      desc: "We start by understanding your child's current level, interests, and learning style to tailor the roadmap."
     },
     {
       icon: <Cog className="w-8 h-8 text-blue-500" />,
-      title: "Hands-on Practice",
-      desc: "Interactive exercises and guided tutorials to build muscle memory and confidence."
+      title: "Individualized Pace",
+      desc: "Learning happens at the student's own speed. No rushing through topics or waiting for a group."
     },
     {
       icon: <Layout className="w-8 h-8 text-purple-500" />,
-      title: "Real Projects",
-      desc: "Students build fully functional projects like games, robots, or AI models."
+      title: "Continuous Feedback",
+      desc: "Mentors provide real-time guidance during sessions, adapting their teaching style to match the student."
     },
     {
       icon: <Target className="w-8 h-8 text-red-500" />,
-      title: "Problem Solving",
-      desc: "Debugging challenges and optimization tasks to develop critical thinking."
+      title: "Project-Based Mastery",
+      desc: "Every concept is applied to a personal project, ensuring practical understanding and creative confidence."
     },
     {
       icon: <Presentation className="w-8 h-8 text-green-500" />,
-      title: "Presentation & Creativity",
-      desc: "Showcasing projects to peers and mentors to build communication skills."
+      title: "Parent Progress Updates",
+      desc: "Regular reports and showcases keep parents informed of milestones and upcoming learning goals."
     }
   ];
 

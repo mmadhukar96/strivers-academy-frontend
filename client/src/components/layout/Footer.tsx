@@ -15,7 +15,7 @@ export function Footer() {
               <span className="font-heading font-bold text-lg">Strivers Academy</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Empowering the next generation of innovators with cutting-edge tech education in AI, Robotics, and Coding.
+              Empowering the next generation of innovators with personalized 1-to-1 tech mentorship in AI, Robotics, and Coding. Serving students worldwide with time-zone friendly sessions.
             </p>
           </div>
 
@@ -23,10 +23,21 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-semibold mb-4 text-primary">Programs</h4>
             <ul className="space-y-2 text-sm text-slate-300">
-              <li><Link href="/programs"><span className="hover:text-white transition-colors cursor-pointer">Coding</span></Link></li>
-              <li><Link href="/programs"><span className="hover:text-white transition-colors cursor-pointer">Robotics</span></Link></li>
-              <li><Link href="/programs"><span className="hover:text-white transition-colors cursor-pointer">Generative AI</span></Link></li>
-              <li><Link href="/programs"><span className="hover:text-white transition-colors cursor-pointer">AR / VR</span></Link></li>
+              <li><Link href="/programs"><a className="hover:text-white transition-colors">Coding</a></Link></li>
+              <li><Link href="/programs"><a className="hover:text-white transition-colors">Robotics</a></Link></li>
+              <li><Link href="/programs"><a className="hover:text-white transition-colors">Generative AI</a></Link></li>
+              <li><Link href="/programs"><a className="hover:text-white transition-colors">AR / VR</a></Link></li>
+            </ul>
+          </div>
+
+          {/* Global Trust */}
+          <div>
+            <h4 className="font-heading font-semibold mb-4 text-primary">Global Mentoring</h4>
+            <ul className="space-y-2 text-sm text-slate-300">
+              <li>Serving students worldwide</li>
+              <li>Time-zone friendly sessions</li>
+              <li>English-first instruction</li>
+              <li>Flexible scheduling</li>
             </ul>
           </div>
 
@@ -36,7 +47,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-slate-300">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-1 text-primary shrink-0" />
-                <span>Noida, Uttar Pradesh, India</span>
+                <span>Noida, Uttar Pradesh, India (Global HQ)</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
@@ -48,26 +59,23 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Social */}
-          <div>
-            <h4 className="font-heading font-semibold mb-4 text-primary">Follow Us</h4>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
-          © {new Date().getFullYear()} Strivers Academy. All rights reserved.
+        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-slate-500 text-sm">
+            © {new Date().getFullYear()} Strivers Academy. All rights reserved.
+          </div>
+          <div className="flex gap-4">
+            <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
+              <Linkedin className="w-5 h-5" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
