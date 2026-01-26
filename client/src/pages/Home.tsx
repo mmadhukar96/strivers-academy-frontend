@@ -24,7 +24,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6 border border-primary/20">
-                🚀 Future-Ready Skills for Ages 8-16
+                🚀 Future-Ready Skills for Ages 6 and Above
               </div>
               <h1 className="font-heading text-5xl md:text-7xl font-bold leading-tight mb-6">
                 Building <span className="text-gradient-tech">Future Innovators</span>
@@ -149,7 +149,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-cyan-100 text-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <Boxes size={32} />
                 </div>
-                <h3 className="font-heading text-xl font-bold mb-3">Project Based</h3>
+                <h3 className="font-heading text-xl font-bold mb-3">Project Based Learning</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Build real projects from day one. Create games, apps, and working robots.
                 </p>

@@ -8,38 +8,38 @@ export default function Programs() {
   const programs = [
     {
       title: "Coding",
-      description: "Learn Python, JavaScript, and block-based coding to build apps and games.",
+      description: "Learn Python, Web Development, and block-based coding to build apps and games.",
       icon: <Code className="w-10 h-10 text-white" />,
       color: "bg-blue-500",
-      age: "8-16 Years"
+      age: "6 and above"
     },
     {
       title: "Robotics",
       description: "Design and build autonomous robots using sensors, motors, and controllers.",
       icon: <Bot className="w-10 h-10 text-white" />,
       color: "bg-purple-500",
-      age: "10-16 Years"
+      age: "8 and above"
     },
     {
       title: "Generative AI",
       description: "Explore the world of AI, machine learning, and create content with LLMs.",
       icon: <Cpu className="w-10 h-10 text-white" />,
       color: "bg-cyan-500",
-      age: "12-16 Years"
+      age: "12 and above"
     },
     {
       title: "3D Modelling",
       description: "Turn imagination into 3D designs for printing and game assets.",
       icon: <Box className="w-10 h-10 text-white" />,
       color: "bg-pink-500",
-      age: "10-16 Years"
+      age: "10 and above"
     },
     {
       title: "AR / VR",
       description: "Create immersive augmented and virtual reality experiences.",
       icon: <Glasses className="w-10 h-10 text-white" />,
       color: "bg-orange-500",
-      age: "12-16 Years"
+      age: "12 and above"
     }
   ];
 

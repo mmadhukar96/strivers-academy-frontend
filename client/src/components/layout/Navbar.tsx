@@ -21,27 +21,27 @@ export function Navbar() {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
-          <a className="flex items-center gap-2 group">
+          <div className="flex items-center gap-2 group cursor-pointer">
             <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
               <img src="/assets/logo.png" alt="Strivers Academy" className="w-8 h-8 object-contain" />
             </div>
             <span className="font-heading font-bold text-xl tracking-tight text-foreground group-hover:text-primary transition-colors">
               Strivers<span className="text-primary">Academy</span>
             </span>
-          </a>
+          </div>
         </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <Link key={link.href} href={link.href}>
-              <a
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+              <span
+                className={`text-sm font-medium transition-colors hover:text-primary cursor-pointer ${
                   location === link.href ? "text-primary font-semibold" : "text-muted-foreground"
                 }`}
               >
                 {link.label}
-              </a>
+              </span>
             </Link>
           ))}
           <Link href="/book-trial">
@@ -63,14 +63,14 @@ export function Navbar() {
               <div className="flex flex-col gap-6 mt-10">
                 {links.map((link) => (
                   <Link key={link.href} href={link.href}>
-                    <a
+                    <span
                       onClick={() => setIsOpen(false)}
-                      className={`text-lg font-medium transition-colors hover:text-primary ${
+                      className={`text-lg font-medium transition-colors hover:text-primary cursor-pointer ${
                         location === link.href ? "text-primary font-semibold" : "text-foreground"
                       }`}
                     >
                       {link.label}
-                    </a>
+                    </span>
                   </Link>
                 ))}
                 <Link href="/book-trial">

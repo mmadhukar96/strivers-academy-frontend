@@ -49,7 +49,7 @@ export default function Founder() {
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 text-center">
                   <GraduationCap className="w-6 h-6 mx-auto mb-2 text-cyan-500" />
-                  <div className="font-bold text-sm">Project Based</div>
+                  <div className="font-bold text-sm">Project Based Learning</div>
                 </div>
               </div>
             </div>

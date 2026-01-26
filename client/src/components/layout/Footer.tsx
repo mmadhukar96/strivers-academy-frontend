@@ -23,10 +23,10 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-semibold mb-4 text-primary">Programs</h4>
             <ul className="space-y-2 text-sm text-slate-300">
-              <li><Link href="/programs"><a className="hover:text-white transition-colors">Coding</a></Link></li>
-              <li><Link href="/programs"><a className="hover:text-white transition-colors">Robotics</a></Link></li>
-              <li><Link href="/programs"><a className="hover:text-white transition-colors">Generative AI</a></Link></li>
-              <li><Link href="/programs"><a className="hover:text-white transition-colors">AR / VR</a></Link></li>
+              <li><Link href="/programs"><span className="hover:text-white transition-colors cursor-pointer">Coding</span></Link></li>
+              <li><Link href="/programs"><span className="hover:text-white transition-colors cursor-pointer">Robotics</span></Link></li>
+              <li><Link href="/programs"><span className="hover:text-white transition-colors cursor-pointer">Generative AI</span></Link></li>
+              <li><Link href="/programs"><span className="hover:text-white transition-colors cursor-pointer">AR / VR</span></Link></li>
             </ul>
           </div>
 
