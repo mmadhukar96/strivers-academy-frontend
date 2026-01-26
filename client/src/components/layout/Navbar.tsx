@@ -14,7 +14,7 @@ export function Navbar() {
     { href: "/methodology", label: "Methodology" },
     { href: "/founder", label: "Founder" },
     { href: "/contact", label: "Contact" },
-    { href: "/dashboard", label: "Dashboard" },
+    { href: "/dashboard", label: "." },
   ];
 
   return (
