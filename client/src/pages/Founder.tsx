@@ -24,17 +24,30 @@ export default function Founder() {
 
             <div className="p-8 md:p-12 flex flex-col justify-center">
               <div className="hidden md:block mb-6">
-                <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/20 border-none">Founder & Lead Educator</Badge>
+                <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/20 border-none">Founder & Lead Mentor</Badge>
                 <h1 className="font-heading text-4xl font-bold mb-2">Mayank Madhukar</h1>
-                <p className="text-xl text-muted-foreground font-medium">STEM & Robotics Specialist</p>
+                <p className="text-xl text-muted-foreground font-medium">Global 1-to-1 STEM Mentor</p>
               </div>
 
               <div className="space-y-6 text-slate-600 leading-relaxed">
                 <p>
-                  With a passion for future technologies and years of experience in global education systems like CBSE, SEAB, and IGCSE, Mayank established Strivers Academy to bridge the gap between traditional schooling and future industry needs.
+                  I founded Strivers Academy after working with students who could memorize technology but struggled to truly understand it. Many could follow instructions or replicate code, yet found it difficult to explain why something worked or how to apply their learning independently. Over time, it became clear that the issue wasn’t ability — it was the way technology was being taught.
                 </p>
                 <p>
-                  He specializes in simplifying complex concepts in Generative AI, Robotics, and Coding, ensuring that students not only learn technical skills but also develop a problem-solving mindset.
+                  Through years of teaching and mentoring, I realized that meaningful learning happens when education adapts to the learner, not the other way around. Every student thinks differently, learns at a different pace, and gains confidence through different kinds of practice. This insight led to the foundation of Strivers Academy — a place built around personalized, one-to-one learning rather than standardized, one-size-fits-all instruction.
+                </p>
+                <p>
+                  At Strivers Academy, I work closely with students in live 1-to-1 sessions, focusing on deep concept clarity, hands-on problem solving, and real-world projects. Instead of memorizing steps, students learn how to think logically, ask questions, and build solutions independently. Each learning path is customized to the student’s level, interests, and goals.
+                </p>
+                <p>
+                  The academy serves students globally, working across different curricula and time zones, while maintaining a consistent focus on quality, clarity, and mentorship. Parents receive regular updates, and students are guided not just to learn technology, but to understand it with confidence.
+                </p>
+                <p>
+                  Strivers Academy was created with a simple belief: when students truly understand what they are learning, they don’t just perform better — they become independent thinkers and creators.
+                </p>
+
+                <p className="font-medium text-slate-900 italic border-l-4 border-primary pl-4">
+                  "In a rapidly evolving world, one-size-fits-all education is no longer enough. Personalized 1-to-1 mentoring allows us to nurture individual curiosity and build a deep, lasting foundation for future innovators."
                 </p>
               </div>
 

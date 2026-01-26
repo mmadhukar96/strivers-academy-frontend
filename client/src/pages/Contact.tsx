@@ -54,11 +54,18 @@ export default function Contact() {
           </div>
 
           <div className="h-full min-h-[400px] bg-slate-100 rounded-2xl overflow-hidden shadow-inner border border-slate-200 flex items-center justify-center text-slate-400">
-            {/* Placeholder for map */}
-            <div className="text-center">
-              <MapPin className="w-12 h-12 mx-auto mb-4 opacity-50" />
-              <p>Map Integration Placeholder</p>
-              <p className="text-xs mt-2">Noida, Uttar Pradesh</p>
+            {/* Map Section */}
+            <div className="text-center w-full h-full relative">
+              <img src="/assets/logo1.png" alt="Strivers Academy Location" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="bg-transparent p-6 text-center min-w-[240px]">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 border border-white/40 shadow-xl">
+                    <MapPin className="w-8 h-8 text-primary drop-shadow-lg" />
+                  </div>
+                  <p className="text-white font-bold text-2xl mb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"></p>
+                  <p className="text-lg text-white font-semibold drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

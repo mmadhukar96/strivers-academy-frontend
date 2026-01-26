@@ -31,6 +31,16 @@ export default function BookTrial() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    // Mock local storage for demonstration
+    const existingLeads = JSON.parse(localStorage.getItem("mock_leads") || "[]");
+    const newLead = {
+      ...values,
+      id: Date.now(),
+      status: "new",
+      date: new Date().toLocaleDateString(),
+    };
+    localStorage.setItem("mock_leads", JSON.stringify([newLead, ...existingLeads]));
+
     toast({
       title: "Registration Successful! 🎉",
       description: "We'll contact you shortly to schedule your free trial class.",
@@ -42,9 +52,9 @@ export default function BookTrial() {
     <div className="pt-24 pb-20 min-h-screen bg-slate-50 flex items-center justify-center p-4">
       <Card className="w-full max-w-lg shadow-xl border-none">
         <CardHeader className="text-center space-y-2">
-          <CardTitle className="font-heading text-3xl font-bold text-primary">Book Your Free Trial</CardTitle>
-          <CardDescription>
-            Join us for a complimentary session and discover the magic of tech!
+          <CardTitle className="font-heading text-3xl font-bold text-primary">Book Your Free 1-to-1 Trial Session</CardTitle>
+          <CardDescription className="text-base">
+            A personalized session to assess your child’s interests, level, and learning style.
           </CardDescription>
         </CardHeader>
         <CardContent>

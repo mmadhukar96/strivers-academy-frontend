@@ -12,6 +12,7 @@ import Methodology from "@/pages/Methodology";
 import Founder from "@/pages/Founder";
 import BookTrial from "@/pages/BookTrial";
 import Contact from "@/pages/Contact";
+import Dashboard from "@/pages/Dashboard";
 
 function Router() {
   return (
@@ -25,6 +26,7 @@ function Router() {
           <Route path="/founder" component={Founder} />
           <Route path="/book-trial" component={BookTrial} />
           <Route path="/contact" component={Contact} />
+          <Route path="/dashboard" component={Dashboard} />
           <Route component={NotFound} />
         </Switch>
       </main>

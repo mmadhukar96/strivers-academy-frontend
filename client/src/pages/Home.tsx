@@ -30,7 +30,7 @@ export default function Home() {
                 Building <span className="text-gradient-tech">Future Innovators</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-                Empowering young minds with hands-on learning in Coding, Robotics, Generative AI, 3D Modelling, and AR/VR.
+                Personalized learning in Coding, Robotics, and AI where <span className="text-primary font-semibold">they become independent thinkers and creators.</span>
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/book-trial">
@@ -44,6 +44,9 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
+              <p className="mt-4 text-sm text-muted-foreground font-medium">
+                Personal mentor • Flexible time zones • Project-based learning
+              </p>
 
               <div className="mt-12 flex gap-4">
                 {features.map((feature, idx) => (
@@ -77,7 +80,7 @@ export default function Home() {
                   className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              
+
               {/* Floating Cards */}
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
@@ -107,6 +110,25 @@ export default function Home() {
                 </div>
               </motion.div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Indicators */}
+      <section className="py-8 border-y border-slate-100 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+            {[
+              "1-to-1 live online sessions",
+              "Flexible scheduling across time zones",
+              "English-first instruction",
+              "Personalized learning roadmap"
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2 text-sm font-medium text-slate-600">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       </section>
