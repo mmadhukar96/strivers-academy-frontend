@@ -37,12 +37,12 @@ export default function BookTrial() {
     
     // Mapping our form fields to Google Form entry IDs
     const formData = new FormData();
-    formData.append("entry.1344405391", values.parentName);
-    formData.append("entry.1037303861", values.studentName);
-    formData.append("entry.1989467770", values.age);
-    formData.append("entry.132890457", values.email);
-    formData.append("entry.454279766", values.phone);
-    formData.append("entry.302391038", values.program);
+    formData.append("entry.30937712", values.parentName);
+    formData.append("entry.1911157625", values.studentName);
+    formData.append("entry.665674324", values.age);
+    formData.append("entry.928726567", values.email);
+    formData.append("entry.571039264", values.phone);
+    formData.append("entry.1972014444", values.program);
     
     // We use no-cors because Google Forms doesn't allow CORS from other domains
     // The response will be sent but we won't be able to read it
