@@ -46,16 +46,12 @@ export default function BookTrial() {
     
     const submissionUrl = `${GOOGLE_FORM_ACTION_URL}?${queryParams.toString()}`;
 
-    // Create a hidden iframe for submission to bypass CORS entirely
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.name = 'hidden_iframe';
-    document.body.appendChild(iframe);
-
+    // Create a visible link for the user to click if they want
+    // But we'll try to auto-submit first
     const form = document.createElement('form');
     form.action = GOOGLE_FORM_ACTION_URL;
     form.method = 'POST';
-    form.target = 'hidden_iframe';
+    form.target = '_blank'; // Opening in new tab is more reliable for published sites
 
     const fields = {
       "entry.30937712": values.parentName,
@@ -80,7 +76,6 @@ export default function BookTrial() {
     // Cleanup
     setTimeout(() => {
       document.body.removeChild(form);
-      document.body.removeChild(iframe);
     }, 1000);
 
     // Keep local storage for our dashboard
