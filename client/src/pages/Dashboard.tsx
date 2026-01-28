@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Trash2, User, Phone, Calendar, BookOpen } from "lucide-react";
+import { Trash2, User, Phone, Calendar, BookOpen, Download } from "lucide-react";
 
 interface Lead {
   id: number;
@@ -30,6 +30,36 @@ export default function Dashboard() {
     localStorage.setItem("mock_leads", JSON.stringify(updatedLeads));
   };
 
+  const exportData = () => {
+    if (leads.length === 0) return;
+    
+    // Create CSV content
+    const headers = ["Date", "Parent Name", "Student Name", "Age", "Phone", "Program", "Status"];
+    const csvContent = [
+      headers.join(","),
+      ...leads.map(lead => [
+        `"${lead.date}"`,
+        `"${lead.parentName}"`,
+        `"${lead.studentName}"`,
+        `"${lead.age}"`,
+        `"${lead.phone}"`,
+        `"${lead.program}"`,
+        `"${lead.status}"`
+      ].join(","))
+    ].join("\n");
+
+    // Create download link
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", `strivers_academy_leads_${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="pt-24 pb-20 min-h-screen bg-slate-50">
       <div className="container mx-auto px-4">
@@ -38,10 +68,20 @@ export default function Dashboard() {
             <h1 className="font-heading text-4xl font-bold text-slate-900">Leads Dashboard</h1>
             <p className="text-muted-foreground">Manage your trial session bookings (Mockup Data)</p>
           </div>
-          <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex gap-8">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">{leads.length}</div>
-              <div className="text-xs text-muted-foreground uppercase">Total Leads</div>
+          <div className="flex items-center gap-4">
+            <Button 
+              onClick={exportData}
+              disabled={leads.length === 0}
+              className="bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 shadow-sm flex items-center gap-2"
+            >
+              <Download className="w-4 h-4" />
+              Export CSV
+            </Button>
+            <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex gap-8">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">{leads.length}</div>
+                <div className="text-xs text-muted-foreground uppercase">Total Leads</div>
+              </div>
             </div>
           </div>
         </div>
