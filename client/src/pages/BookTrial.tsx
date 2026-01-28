@@ -32,8 +32,27 @@ export default function BookTrial() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Mock local storage for demonstration
+    // Form action URL
+    const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdiP27DQ3g6vuSrOz9hU4-gduFW1obf1b0tUSrzJbFdH8d58g/formResponse";
+    
+    // Mapping our form fields to Google Form entry IDs
+    const formData = new FormData();
+    formData.append("entry.1344405391", values.parentName);
+    formData.append("entry.1037303861", values.studentName);
+    formData.append("entry.1989467770", values.age);
+    formData.append("entry.132890457", values.email);
+    formData.append("entry.454279766", values.phone);
+    formData.append("entry.302391038", values.program);
+    
+    // We use no-cors because Google Forms doesn't allow CORS from other domains
+    // The response will be sent but we won't be able to read it
+    fetch(GOOGLE_FORM_ACTION_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: formData
+    }).catch(error => console.error('Error submitting to Google Forms:', error));
+
+    // Keep local storage for our dashboard
     const existingLeads = JSON.parse(localStorage.getItem("mock_leads") || "[]");
     const newLead = {
       ...values,
