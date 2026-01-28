@@ -12,6 +12,7 @@ const formSchema = z.object({
   parentName: z.string().min(2, "Parent name must be at least 2 characters"),
   studentName: z.string().min(2, "Student name must be at least 2 characters"),
   age: z.string().min(1, "Please enter age"),
+  email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(10, "Please enter a valid phone number"),
   program: z.string().min(1, "Please select a program interest"),
 });
@@ -24,6 +25,7 @@ export default function BookTrial() {
       parentName: "",
       studentName: "",
       age: "",
+      email: "",
       phone: "",
       program: "",
     },
@@ -103,6 +105,34 @@ export default function BookTrial() {
                   )}
                 />
               </div>
+
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email Address</FormLabel>
+                    <FormControl>
+                      <Input placeholder="parent@example.com" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email Address</FormLabel>
+                    <FormControl>
+                      <Input placeholder="parent@example.com" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
               <FormField
                 control={form.control}

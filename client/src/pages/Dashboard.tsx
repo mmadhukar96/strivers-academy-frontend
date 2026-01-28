@@ -34,7 +34,7 @@ export default function Dashboard() {
     if (leads.length === 0) return;
     
     // Create CSV content
-    const headers = ["Date", "Parent Name", "Student Name", "Age", "Phone", "Program", "Status"];
+    const headers = ["Date", "Parent Name", "Student Name", "Age", "Email", "Phone", "Program", "Status"];
     const csvContent = [
       headers.join(","),
       ...leads.map(lead => [
@@ -42,6 +42,7 @@ export default function Dashboard() {
         `"${lead.parentName}"`,
         `"${lead.studentName}"`,
         `"${lead.age}"`,
+        `"${(lead as any).email || 'N/A'}"`,
         `"${lead.phone}"`,
         `"${lead.program}"`,
         `"${lead.status}"`
