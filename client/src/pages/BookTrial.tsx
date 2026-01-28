@@ -36,21 +36,52 @@ export default function BookTrial() {
     const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdiP27DQ3g6vuSrOz9hU4-gduFW1obf1b0tUSrzJbFdH8d58g/formResponse";
     
     // Mapping our form fields to Google Form entry IDs
-    const formData = new FormData();
-    formData.append("entry.30937712", values.parentName);
-    formData.append("entry.1911157625", values.studentName);
-    formData.append("entry.665674324", values.age);
-    formData.append("entry.928726567", values.email);
-    formData.append("entry.571039264", values.phone);
-    formData.append("entry.1972014444", values.program);
+    const queryParams = new URLSearchParams();
+    queryParams.append("entry.30937712", values.parentName);
+    queryParams.append("entry.1911157625", values.studentName);
+    queryParams.append("entry.665674324", values.age);
+    queryParams.append("entry.928726567", values.email);
+    queryParams.append("entry.571039264", values.phone);
+    queryParams.append("entry.1972014444", values.program);
     
-    // We use no-cors because Google Forms doesn't allow CORS from other domains
-    // The response will be sent but we won't be able to read it
-    fetch(GOOGLE_FORM_ACTION_URL, {
-      method: "POST",
-      mode: "no-cors",
-      body: formData
-    }).catch(error => console.error('Error submitting to Google Forms:', error));
+    const submissionUrl = `${GOOGLE_FORM_ACTION_URL}?${queryParams.toString()}`;
+
+    // Create a hidden iframe for submission to bypass CORS entirely
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.name = 'hidden_iframe';
+    document.body.appendChild(iframe);
+
+    const form = document.createElement('form');
+    form.action = GOOGLE_FORM_ACTION_URL;
+    form.method = 'POST';
+    form.target = 'hidden_iframe';
+
+    const fields = {
+      "entry.30937712": values.parentName,
+      "entry.1911157625": values.studentName,
+      "entry.665674324": values.age,
+      "entry.928726567": values.email,
+      "entry.571039264": values.phone,
+      "entry.1972014444": values.program
+    };
+
+    Object.entries(fields).forEach(([name, value]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = name;
+      input.value = value;
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+
+    // Cleanup
+    setTimeout(() => {
+      document.body.removeChild(form);
+      document.body.removeChild(iframe);
+    }, 1000);
 
     // Keep local storage for our dashboard
     const existingLeads = JSON.parse(localStorage.getItem("mock_leads") || "[]");
