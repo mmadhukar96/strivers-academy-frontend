@@ -63,7 +63,7 @@ export default function BookTrial() {
       "entry.665674324": values.age,
       "entry.928726567": values.email,
       "entry.571039264": values.phone,
-      "entry.1972014444": values.program
+      "entry.1972014444": values.program.charAt(0).toUpperCase() + values.program.slice(1).replace("ai", "Generative AI").replace("arvr", "AR/VR").replace("3d", "3D Modelling")
     };
 
     Object.entries(fields).forEach(([name, value]) => {
