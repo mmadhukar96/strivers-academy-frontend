@@ -87,7 +87,8 @@ export default function BookTrial() {
     // Cleanup
     setTimeout(() => {
       document.body.removeChild(form);
-    }, 1000);
+      form.reset();
+    }, 2000);
 
     // Keep local storage for our dashboard
     const existingLeads = JSON.parse(localStorage.getItem("mock_leads") || "[]");
@@ -103,7 +104,6 @@ export default function BookTrial() {
       title: "Registration Successful! 🎉",
       description: "We'll contact you shortly to schedule your free trial class.",
     });
-    form.reset();
   }
 
   return (
