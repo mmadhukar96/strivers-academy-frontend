@@ -48,10 +48,10 @@ export default function BookTrial() {
 
     // Create a visible link for the user to click if they want
     // But we'll try to auto-submit first
-    const form = document.createElement('form');
-    form.action = GOOGLE_FORM_ACTION_URL;
-    form.method = 'POST';
-    form.target = '_blank'; // Opening in new tab is more reliable for published sites
+    const form_el = document.createElement('form');
+    form_el.action = GOOGLE_FORM_ACTION_URL;
+    form_el.method = 'POST';
+    form_el.target = '_blank'; // Opening in new tab is more reliable for published sites
 
     const formatProgramValue = (val: string) => {
       switch (val) {
@@ -78,15 +78,15 @@ export default function BookTrial() {
       input.type = 'hidden';
       input.name = name;
       input.value = value;
-      form.appendChild(input);
+      form_el.appendChild(input);
     });
 
-    document.body.appendChild(form);
-    form.submit();
+    document.body.appendChild(form_el);
+    form_el.submit();
 
     // Cleanup
     setTimeout(() => {
-      document.body.removeChild(form);
+      document.body.removeChild(form_el);
       form.reset();
     }, 2000);
 
