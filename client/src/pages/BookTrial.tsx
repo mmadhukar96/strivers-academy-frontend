@@ -53,13 +53,24 @@ export default function BookTrial() {
     form.method = 'POST';
     form.target = '_blank'; // Opening in new tab is more reliable for published sites
 
+    const formatProgramValue = (val: string) => {
+      switch (val) {
+        case "coding": return "Coding";
+        case "robotics": return "Robotics";
+        case "ai": return "Generative AI";
+        case "3d": return "3D Modelling";
+        case "arvr": return "AR/VR";
+        default: return val;
+      }
+    };
+
     const fields = {
       "entry.30937712": values.parentName,
       "entry.1911157625": values.studentName,
       "entry.665674324": values.age,
       "entry.928726567": values.email,
       "entry.571039264": values.phone,
-      "entry.1972014444": values.program.charAt(0).toUpperCase() + values.program.slice(1).replace("ai", "Generative AI").replace("arvr", "AR/VR").replace("3d", "3D Modelling")
+      "entry.1972014444": formatProgramValue(values.program)
     };
 
     Object.entries(fields).forEach(([name, value]) => {
