@@ -13,7 +13,7 @@ const formSchema = z.object({
   studentName: z.string().min(2, "Student name must be at least 2 characters"),
   age: z.string().min(1, "Please enter age"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
+  phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Please enter a valid phone number with country code (e.g., +919876543210)"),
   program: z.string().min(1, "Please select a program interest"),
 });
 
@@ -26,7 +26,7 @@ export default function BookTrial() {
       studentName: "",
       age: "",
       email: "",
-      phone: "",
+      phone: "+91",
       program: "",
     },
   });
@@ -181,7 +181,7 @@ export default function BookTrial() {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone Number</FormLabel>
+                    <FormLabel>Phone Number (with Country Code)</FormLabel>
                     <FormControl>
                       <Input placeholder="+91 98765 43210" {...field} />
                     </FormControl>
