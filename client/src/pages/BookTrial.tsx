@@ -221,10 +221,11 @@ export default function BookTrial() {
                       <div className="flex items-center border border-input rounded-md bg-white overflow-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 transition-all duration-200">
                         <Select
                           onValueChange={(val) => {
-                            const country = countries.find(c => c.code === val);
+                            const [flag, code] = val.split('-');
+                            const country = countries.find(c => c.flag === flag && c.code === code);
                             if (country) setSelectedCountry(country);
                           }}
-                          defaultValue={selectedCountry.code}
+                          defaultValue={`${selectedCountry.flag}-${selectedCountry.code}`}
                         >
                           <SelectTrigger className="flex items-center gap-2 px-3 bg-slate-50 border-r border-input py-2 select-none h-10 w-auto min-w-[100px] rounded-none border-none focus:ring-0">
                             <div className="flex items-center gap-2">
@@ -236,9 +237,9 @@ export default function BookTrial() {
                               <span className="font-medium text-slate-700">{selectedCountry.code}</span>
                             </div>
                           </SelectTrigger>
-                          <SelectContent>
+                          <SelectContent className="max-h-[300px] overflow-y-auto">
                             {countries.map((c) => (
-                              <SelectItem key={`${c.flag}-${c.code}`} value={c.code}>
+                              <SelectItem key={`${c.flag}-${c.code}-${c.name}`} value={`${c.flag}-${c.code}`}>
                                 <div className="flex items-center gap-2">
                                   <img 
                                     src={`https://flagcdn.com/w20/${c.flag}.png`} 
