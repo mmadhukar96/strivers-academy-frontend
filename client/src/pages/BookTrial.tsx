@@ -7,13 +7,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { ChevronDown } from "lucide-react";
 
 const formSchema = z.object({
   parentName: z.string().min(2, "Parent name must be at least 2 characters"),
   studentName: z.string().min(2, "Student name must be at least 2 characters"),
   age: z.string().min(1, "Please enter age"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Please enter a valid phone number with country code (e.g., +919876543210)"),
+  phone: z.string().min(10, "Please enter a valid phone number"),
   program: z.string().min(1, "Please select a program interest"),
 });
 
@@ -26,32 +27,33 @@ export default function BookTrial() {
       studentName: "",
       age: "",
       email: "",
-      phone: "+91",
+      phone: "",
       program: "",
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    // Combine country code with phone for submission
+    const fullPhone = `+91${values.phone}`;
+    const submissionValues = { ...values, phone: fullPhone };
+
     // Form action URL
     const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdiP27DQ3g6vuSrOz9hU4-gduFW1obf1b0tUSrzJbFdH8d58g/formResponse";
     
     // Mapping our form fields to Google Form entry IDs
     const queryParams = new URLSearchParams();
-    queryParams.append("entry.30937712", values.parentName);
-    queryParams.append("entry.1911157625", values.studentName);
-    queryParams.append("entry.665674324", values.age);
-    queryParams.append("entry.928726567", values.email);
-    queryParams.append("entry.571039264", values.phone);
-    queryParams.append("entry.1972014444", values.program);
+    queryParams.append("entry.30937712", submissionValues.parentName);
+    queryParams.append("entry.1911157625", submissionValues.studentName);
+    queryParams.append("entry.665674324", submissionValues.age);
+    queryParams.append("entry.928726567", submissionValues.email);
+    queryParams.append("entry.571039264", submissionValues.phone);
+    queryParams.append("entry.1972014444", submissionValues.program);
     
-    const submissionUrl = `${GOOGLE_FORM_ACTION_URL}?${queryParams.toString()}`;
-
-    // Create a visible link for the user to click if they want
-    // But we'll try to auto-submit first
+    // ... rest of mapping logic
     const form_el = document.createElement('form');
     form_el.action = GOOGLE_FORM_ACTION_URL;
     form_el.method = 'POST';
-    form_el.target = '_blank'; // Opening in new tab is more reliable for published sites
+    form_el.target = '_blank';
 
     const formatProgramValue = (val: string) => {
       switch (val) {
@@ -65,12 +67,12 @@ export default function BookTrial() {
     };
 
     const fields = {
-      "entry.30937712": values.parentName,
-      "entry.1911157625": values.studentName,
-      "entry.665674324": values.age,
-      "entry.928726567": values.email,
-      "entry.571039264": values.phone,
-      "entry.1972014444": formatProgramValue(values.program)
+      "entry.30937712": submissionValues.parentName,
+      "entry.1911157625": submissionValues.studentName,
+      "entry.665674324": submissionValues.age,
+      "entry.928726567": submissionValues.email,
+      "entry.571039264": submissionValues.phone,
+      "entry.1972014444": formatProgramValue(submissionValues.program)
     };
 
     Object.entries(fields).forEach(([name, value]) => {
@@ -93,7 +95,7 @@ export default function BookTrial() {
     // Keep local storage for our dashboard
     const existingLeads = JSON.parse(localStorage.getItem("mock_leads") || "[]");
     const newLead = {
-      ...values,
+      ...submissionValues,
       id: Date.now(),
       status: "new",
       date: new Date().toLocaleDateString(),
@@ -181,9 +183,25 @@ export default function BookTrial() {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone Number (with Country Code)</FormLabel>
+                    <FormLabel>Phone Number</FormLabel>
                     <FormControl>
-                      <Input placeholder="+91 98765 43210" {...field} />
+                      <div className="flex items-center border border-input rounded-md bg-white overflow-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 transition-all duration-200">
+                        <div className="flex items-center gap-2 px-3 bg-slate-50 border-r border-input py-2 select-none">
+                          <img 
+                            src="https://flagcdn.com/w40/in.png" 
+                            alt="India" 
+                            className="w-5 h-auto rounded-sm"
+                          />
+                          <span className="font-medium text-slate-700">+91</span>
+                          <ChevronDown className="w-4 h-4 text-slate-400" />
+                        </div>
+                        <input
+                          type="tel"
+                          className="flex h-10 w-full bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+                          placeholder="Type here"
+                          {...field}
+                        />
+                      </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
