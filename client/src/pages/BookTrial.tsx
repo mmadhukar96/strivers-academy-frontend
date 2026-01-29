@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const formSchema = z.object({
   parentName: z.string().min(2, "Parent name must be at least 2 characters"),
@@ -34,7 +34,7 @@ export default function BookTrial() {
   });
 
   const [selectedCountry, setSelectedCountry] = useState({ code: "+91", flag: "in" });
-  const countries = [
+  const [countries, setCountries] = useState([
     { name: "India", code: "+91", flag: "in" },
     { name: "USA", code: "+1", flag: "us" },
     { name: "UK", code: "+44", flag: "gb" },
@@ -42,7 +42,28 @@ export default function BookTrial() {
     { name: "Singapore", code: "+65", flag: "sg" },
     { name: "Australia", code: "+61", flag: "au" },
     { name: "Canada", code: "+1", flag: "ca" },
-  ];
+  ]);
+
+  useEffect(() => {
+    fetch("https://restcountries.com/v3.1/all?fields=name,idd,cca2")
+      .then(res => res.json())
+      .then(data => {
+        const formatted = data
+          .filter((c: any) => c.idd.root)
+          .map((c: any) => ({
+            name: c.name.common,
+            code: c.idd.root + (c.idd.suffixes?.[0] || ""),
+            flag: c.cca2.toLowerCase()
+          }))
+          .sort((a: any, b: any) => a.name.localeCompare(b.name));
+        
+        // Ensure India is at top or preserved
+        const india = formatted.find((c: any) => c.flag === "in");
+        const rest = formatted.filter((c: any) => c.flag !== "in");
+        setCountries(india ? [india, ...rest] : formatted);
+      })
+      .catch(err => console.error("Error fetching countries:", err));
+  }, []);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Combine country code with phone for submission
