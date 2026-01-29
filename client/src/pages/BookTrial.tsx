@@ -45,6 +45,7 @@ export default function BookTrial() {
     { name: "Singapore", code: "+65", flag: "sg" },
     { name: "Australia", code: "+61", flag: "au" },
     { name: "Canada", code: "+1", flag: "ca" },
+    { name: "Germany", code: "+49", flag: "de" },
   ];
 
   function onSubmit(values: z.infer<typeof formSchema>) {
