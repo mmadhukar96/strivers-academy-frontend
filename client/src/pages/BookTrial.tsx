@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const formSchema = z.object({
   parentName: z.string().min(2, "Parent name must be at least 2 characters"),
@@ -32,9 +33,20 @@ export default function BookTrial() {
     },
   });
 
+  const [selectedCountry, setSelectedCountry] = useState({ code: "+91", flag: "in" });
+  const countries = [
+    { name: "India", code: "+91", flag: "in" },
+    { name: "USA", code: "+1", flag: "us" },
+    { name: "UK", code: "+44", flag: "gb" },
+    { name: "UAE", code: "+971", flag: "ae" },
+    { name: "Singapore", code: "+65", flag: "sg" },
+    { name: "Australia", code: "+61", flag: "au" },
+    { name: "Canada", code: "+1", flag: "ca" },
+  ];
+
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Combine country code with phone for submission
-    const fullPhone = `+91${values.phone}`;
+    const fullPhone = `${selectedCountry.code}${values.phone}`;
     const submissionValues = { ...values, phone: fullPhone };
 
     // Form action URL
@@ -186,15 +198,38 @@ export default function BookTrial() {
                     <FormLabel>Phone Number</FormLabel>
                     <FormControl>
                       <div className="flex items-center border border-input rounded-md bg-white overflow-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 transition-all duration-200">
-                        <div className="flex items-center gap-2 px-3 bg-slate-50 border-r border-input py-2 select-none">
-                          <img 
-                            src="https://flagcdn.com/w40/in.png" 
-                            alt="India" 
-                            className="w-5 h-auto rounded-sm"
-                          />
-                          <span className="font-medium text-slate-700">+91</span>
-                          <ChevronDown className="w-4 h-4 text-slate-400" />
-                        </div>
+                        <Select
+                          onValueChange={(val) => {
+                            const country = countries.find(c => c.code === val);
+                            if (country) setSelectedCountry(country);
+                          }}
+                          defaultValue={selectedCountry.code}
+                        >
+                          <SelectTrigger className="flex items-center gap-2 px-3 bg-slate-50 border-r border-input py-2 select-none h-10 w-auto min-w-[100px] rounded-none border-none focus:ring-0">
+                            <div className="flex items-center gap-2">
+                              <img 
+                                src={`https://flagcdn.com/w40/${selectedCountry.flag}.png`}
+                                alt={selectedCountry.name}
+                                className="w-5 h-auto rounded-sm"
+                              />
+                              <span className="font-medium text-slate-700">{selectedCountry.code}</span>
+                            </div>
+                          </SelectTrigger>
+                          <SelectContent>
+                            {countries.map((c) => (
+                              <SelectItem key={`${c.flag}-${c.code}`} value={c.code}>
+                                <div className="flex items-center gap-2">
+                                  <img 
+                                    src={`https://flagcdn.com/w20/${c.flag}.png`} 
+                                    alt={c.name} 
+                                    className="w-4 h-auto rounded-sm"
+                                  />
+                                  <span>{c.name} ({c.code})</span>
+                                </div>
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                         <input
                           type="tel"
                           className="flex h-10 w-full bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
