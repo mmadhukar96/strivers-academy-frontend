@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bot, Code, Cpu, Boxes, Box } from "lucide-react";
+import { ArrowRight, Bot, Code, Cpu, Boxes, Box, Glasses } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
@@ -10,6 +10,7 @@ export default function Home() {
     { icon: <Bot className="w-6 h-6 text-white" />, title: "Robotics", color: "bg-purple-500" },
     { icon: <Cpu className="w-6 h-6 text-white" />, title: "Gen AI", color: "bg-cyan-500" },
     { icon: <Box className="w-6 h-6 text-white" />, title: "3D Models", color: "bg-pink-500" },
+    { icon: <Glasses className="w-6 h-6 text-white" />, title: "AR/VR", color: "bg-orange-500" },
   ];
 
   return (
