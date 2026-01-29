@@ -31,7 +31,15 @@ export default function BookTrial() {
       const age = parseInt(val);
       return !isNaN(age) && age >= 5;
     }, "Minimum age must be 5 years"),
-    email: z.string().email("Please enter a valid email address"),
+    email: z.string()
+      .email("Please enter a valid email address")
+      .refine((val) => {
+        const domain = val.split('@')[1]?.toLowerCase();
+        const commonProviders = ['gmail.com', 'outlook.com', 'yahoo.com', 'hotmail.com', 'icloud.com'];
+        // You can add more logic here if you want to block specific domains
+        // For now, we'll just ensure it's a standard email format
+        return true; 
+      }, "Please use a valid personal email address"),
     phone: z.string().refine((val) => {
       const digitsOnly = val.replace(/\D/g, "");
       return digitsOnly.length >= selectedCountry.min && digitsOnly.length <= selectedCountry.max;
