@@ -7,23 +7,40 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
-
-const formSchema = z.object({
-  parentName: z.string().min(2, "Parent name must be at least 2 characters"),
-  studentName: z.string().min(2, "Student name must be at least 2 characters"),
-  age: z.string().refine((val) => {
-    const age = parseInt(val);
-    return !isNaN(age) && age >= 5;
-  }, "Minimum age must be 5 years"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  program: z.string().min(1, "Please select a program interest"),
-});
 
 export default function BookTrial() {
   const { toast } = useToast();
+  const countries = [
+    { name: "India", code: "+91", flag: "in", min: 10, max: 10 },
+    { name: "USA", code: "+1", flag: "us", min: 10, max: 10 },
+    { name: "UK", code: "+44", flag: "gb", min: 10, max: 11 },
+    { name: "UAE", code: "+971", flag: "ae", min: 9, max: 9 },
+    { name: "Singapore", code: "+65", flag: "sg", min: 8, max: 8 },
+    { name: "Australia", code: "+61", flag: "au", min: 9, max: 9 },
+    { name: "Canada", code: "+1", flag: "ca", min: 10, max: 10 },
+    { name: "Germany", code: "+49", flag: "de", min: 10, max: 11 },
+  ];
+
+  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+
+  const formSchema = z.object({
+    parentName: z.string().min(2, "Parent name must be at least 2 characters"),
+    studentName: z.string().min(2, "Student name must be at least 2 characters"),
+    age: z.string().refine((val) => {
+      const age = parseInt(val);
+      return !isNaN(age) && age >= 5;
+    }, "Minimum age must be 5 years"),
+    email: z.string().email("Please enter a valid email address"),
+    phone: z.string().refine((val) => {
+      const digitsOnly = val.replace(/\D/g, "");
+      return digitsOnly.length >= selectedCountry.min && digitsOnly.length <= selectedCountry.max;
+    }, {
+      message: `Phone number must be ${selectedCountry.min === selectedCountry.max ? selectedCountry.min : `${selectedCountry.min}-${selectedCountry.max}`} digits for ${selectedCountry.name}`
+    }),
+    program: z.string().min(1, "Please select a program interest"),
+  });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -36,36 +53,19 @@ export default function BookTrial() {
     },
   });
 
-  const [selectedCountry, setSelectedCountry] = useState({ code: "+91", flag: "in" });
-  const countries = [
-    { name: "India", code: "+91", flag: "in" },
-    { name: "USA", code: "+1", flag: "us" },
-    { name: "UK", code: "+44", flag: "gb" },
-    { name: "UAE", code: "+971", flag: "ae" },
-    { name: "Singapore", code: "+65", flag: "sg" },
-    { name: "Australia", code: "+61", flag: "au" },
-    { name: "Canada", code: "+1", flag: "ca" },
-    { name: "Germany", code: "+49", flag: "de" },
-  ];
+  // Re-validate phone when country changes
+  useEffect(() => {
+    if (form.getValues("phone")) {
+      form.trigger("phone");
+    }
+  }, [selectedCountry, form]);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Combine country code with phone for submission
     const fullPhone = `${selectedCountry.code}${values.phone}`;
     const submissionValues = { ...values, phone: fullPhone };
 
-    // Form action URL
     const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdiP27DQ3g6vuSrOz9hU4-gduFW1obf1b0tUSrzJbFdH8d58g/formResponse";
     
-    // Mapping our form fields to Google Form entry IDs
-    const queryParams = new URLSearchParams();
-    queryParams.append("entry.30937712", submissionValues.parentName);
-    queryParams.append("entry.1911157625", submissionValues.studentName);
-    queryParams.append("entry.665674324", submissionValues.age);
-    queryParams.append("entry.928726567", submissionValues.email);
-    queryParams.append("entry.571039264", submissionValues.phone);
-    queryParams.append("entry.1972014444", submissionValues.program);
-    
-    // ... rest of mapping logic
     const form_el = document.createElement('form');
     form_el.action = GOOGLE_FORM_ACTION_URL;
     form_el.method = 'POST';
@@ -102,13 +102,11 @@ export default function BookTrial() {
     document.body.appendChild(form_el);
     form_el.submit();
 
-    // Cleanup
     setTimeout(() => {
       document.body.removeChild(form_el);
       form.reset();
     }, 2000);
 
-    // Keep local storage for our dashboard
     const existingLeads = JSON.parse(localStorage.getItem("mock_leads") || "[]");
     const newLead = {
       ...submissionValues,
