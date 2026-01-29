@@ -37,7 +37,7 @@ export default function BookTrial() {
   });
 
   const [selectedCountry, setSelectedCountry] = useState({ code: "+91", flag: "in" });
-  const [countries, setCountries] = useState([
+  const countries = [
     { name: "India", code: "+91", flag: "in" },
     { name: "USA", code: "+1", flag: "us" },
     { name: "UK", code: "+44", flag: "gb" },
@@ -45,28 +45,7 @@ export default function BookTrial() {
     { name: "Singapore", code: "+65", flag: "sg" },
     { name: "Australia", code: "+61", flag: "au" },
     { name: "Canada", code: "+1", flag: "ca" },
-  ]);
-
-  useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all?fields=name,idd,cca2")
-      .then(res => res.json())
-      .then(data => {
-        const formatted = data
-          .filter((c: any) => c.idd.root)
-          .map((c: any) => ({
-            name: c.name.common,
-            code: c.idd.root + (c.idd.suffixes?.[0] || ""),
-            flag: c.cca2.toLowerCase()
-          }))
-          .sort((a: any, b: any) => a.name.localeCompare(b.name));
-        
-        // Ensure India is at top or preserved
-        const india = formatted.find((c: any) => c.flag === "in");
-        const rest = formatted.filter((c: any) => c.flag !== "in");
-        setCountries(india ? [india, ...rest] : formatted);
-      })
-      .catch(err => console.error("Error fetching countries:", err));
-  }, []);
+  ];
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Combine country code with phone for submission
@@ -224,11 +203,10 @@ export default function BookTrial() {
                       <div className="flex items-center border border-input rounded-md bg-white overflow-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 transition-all duration-200">
                         <Select
                           onValueChange={(val) => {
-                            const [flag, code] = val.split('-');
-                            const country = countries.find(c => c.flag === flag && c.code === code);
+                            const country = countries.find(c => c.code === val);
                             if (country) setSelectedCountry(country);
                           }}
-                          defaultValue={`${selectedCountry.flag}-${selectedCountry.code}`}
+                          defaultValue={selectedCountry.code}
                         >
                           <SelectTrigger className="flex items-center gap-2 px-3 bg-slate-50 border-r border-input py-2 select-none h-10 w-auto min-w-[100px] rounded-none border-none focus:ring-0">
                             <div className="flex items-center gap-2">
@@ -240,9 +218,9 @@ export default function BookTrial() {
                               <span className="font-medium text-slate-700">{selectedCountry.code}</span>
                             </div>
                           </SelectTrigger>
-                          <SelectContent className="max-h-[300px] overflow-y-auto">
+                          <SelectContent>
                             {countries.map((c) => (
-                              <SelectItem key={`${c.flag}-${c.code}-${c.name}`} value={`${c.flag}-${c.code}`}>
+                              <SelectItem key={`${c.flag}-${c.code}`} value={c.code}>
                                 <div className="flex items-center gap-2">
                                   <img 
                                     src={`https://flagcdn.com/w20/${c.flag}.png`} 
