@@ -24,9 +24,9 @@ export default function Founder() {
 
             <div className="p-8 md:p-12 flex flex-col justify-center">
               <div className="hidden md:block mb-6">
-                <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/20 border-none">Founder & Lead Mentor</Badge>
+                <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary hover:bg-primary/20 border-none">Founder & Lead Educator | Global 1-to-1 STEM Mentor</Badge>
                 <h1 className="font-heading text-4xl font-bold mb-2">Mayank Madhukar</h1>
-                <p className="text-xl text-muted-foreground font-medium">Global 1-to-1 STEM Mentor</p>
+                <p className="text-xl text-muted-foreground font-medium">Founder & Lead Educator | Global 1-to-1 STEM Mentor</p>
               </div>
 
               <div className="space-y-6 text-slate-600 leading-relaxed">

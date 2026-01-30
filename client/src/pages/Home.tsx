@@ -31,7 +31,7 @@ export default function Home() {
                 Building <span className="text-gradient-tech">Future Innovators</span> Through 1-to-1 STEM Mentorship
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-                1-to-1 live sessions featuring personalized learning and global availability in Coding, Robotics, and AI. <span className="text-primary font-semibold">They become independent thinkers and creators.</span>
+                1-to-1 live STEM sessions personalized to your child’s pace, interests, and learning style — available globally.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/book-trial">

@@ -53,7 +53,7 @@ export default function LearningJourney() {
     },
     {
       q: "Who teaches the sessions?",
-      a: "Our mentors are vetted STEM experts, engineers, and educators who are passionate about project-based learning."
+      a: "Sessions are led by experienced STEM mentors, guided directly by the Founder & Lead Educator to ensure quality, consistency, and personalized attention."
     },
     {
       q: "Which countries do you serve?",
@@ -216,11 +216,17 @@ export default function LearningJourney() {
             </table>
           </div>
           
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-center flex flex-col items-center gap-4">
             <p className="text-xs text-muted-foreground italic leading-relaxed">
               Progress is based on understanding, not speed.<br />
               All tracks are live, 1-to-1, mentor-led, and customized to each student.
             </p>
+            <div className="mt-2">
+              <p className="text-sm font-medium mb-4 text-slate-900">Not sure which track fits your child?</p>
+              <Link href="/book-trial">
+                <Button className="rounded-full px-8">Book Free 1-to-1 Trial</Button>
+              </Link>
+            </div>
           </div>
         </section>
 
