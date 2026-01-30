@@ -259,6 +259,11 @@ export default function Home() {
           <div className="text-center">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8">Ready to see their transformation?</h2>
             <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/learning-journey">
+                <Button size="lg" variant="outline" className="rounded-full px-8">
+                  View Learning Journey & FAQ
+                </Button>
+              </Link>
               <Link href="/book-trial">
                 <Button size="lg" className="bg-primary text-white rounded-full px-8">
                   Book Free 1-to-1 Trial

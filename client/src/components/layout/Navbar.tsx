@@ -11,6 +11,7 @@ export function Navbar() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/programs", label: "Programs" },
+    { href: "/learning-journey", label: "Learning Journey" },
     { href: "/methodology", label: "Methodology" },
     { href: "/founder", label: "Founder" },
     { href: "/contact", label: "Contact" },
