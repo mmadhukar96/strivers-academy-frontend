@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { HelpCircle, ChevronRight, BookOpen, Rocket, Award } from "lucide-react";
+import learningRoadmapImg from "@/assets/images/learning-roadmap.png";
 
 export default function LearningJourney() {
   const journey = [
@@ -91,7 +92,19 @@ export default function LearningJourney() {
 
         {/* Journey Section */}
         <section className="mb-24">
-          <h2 className="font-heading text-3xl font-bold mb-12 text-center">The Strivers Academy Learning Roadmap</h2>
+          <h2 className="font-heading text-3xl font-bold mb-8 text-center">The Strivers Academy Learning Roadmap</h2>
+          
+          <div className="max-w-5xl mx-auto mb-16 relative">
+            <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 backdrop-blur-sm">
+              <img 
+                src={learningRoadmapImg} 
+                alt="Strivers Academy Learning Roadmap" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            {/* Visual labels overlay or floating notes could go here if needed, but the image is the hero */}
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
