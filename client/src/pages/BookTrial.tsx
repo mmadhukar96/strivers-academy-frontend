@@ -140,6 +140,13 @@ export default function BookTrial() {
           </CardDescription>
         </CardHeader>
         <CardContent>
+          <div className="mb-8 p-4 bg-primary/5 rounded-2xl border border-primary/10 text-center">
+            <h4 className="font-bold text-primary mb-2">Pricing & Personalized Assessment</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Our pricing is personalized and discussed after your child's free 1-to-1 assessment. 
+              We tailor the plan based on individual learning goals, pace, and depth of mentorship required.
+            </p>
+          </div>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <FormField
