@@ -161,6 +161,55 @@ export default function LearningJourney() {
           </div>
         </section>
 
+        {/* Comparison Table Section */}
+        <section className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl font-bold mb-4">Compare Learning Tracks at Strivers Academy</h2>
+            <p className="text-muted-foreground text-lg">A clear overview to help parents understand the learning journey.</p>
+          </div>
+          
+          <div className="overflow-x-auto rounded-3xl shadow-xl border border-slate-100 bg-white">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-100">
+                  <th className="p-6 font-heading font-bold text-slate-900">Feature</th>
+                  <th className="p-6 font-heading font-bold text-blue-600">Foundation Track</th>
+                  <th className="p-6 font-heading font-bold text-purple-600">Growth Track</th>
+                  <th className="p-6 font-heading font-bold text-cyan-600">Mastery Track</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-50">
+                {[
+                  ["Total Sessions", "50", "100", "150"],
+                  ["Learning Focus", "Fundamentals & confidence", "Application & independence", "Depth & mastery"],
+                  ["Session Type", "1-to-1 Live", "1-to-1 Live", "1-to-1 Live"],
+                  ["Learning Pace", "Personalized", "Personalized", "Highly personalized"],
+                  ["Project Complexity", "Guided mini-projects", "Real-world projects", "Advanced & portfolio-ready"],
+                  ["Student Independence", "Emerging", "Strong", "High"],
+                  ["Mentor Involvement", "High", "High", "Deep mentorship"],
+                  ["Parent Progress Updates", "Yes", "Yes", "Detailed & regular"],
+                  ["Best For", "Beginners", "Skill builders", "Long-term mastery"],
+                  ["Outcome", "Strong foundations", "Real-world skills", "Confident creator"]
+                ].map((row, i) => (
+                  <tr key={i} className="hover:bg-slate-50/50 transition-colors">
+                    <td className="p-6 text-sm font-bold text-slate-900 bg-slate-50/30">{row[0]}</td>
+                    <td className="p-6 text-sm text-slate-600 leading-relaxed">{row[1]}</td>
+                    <td className="p-6 text-sm text-slate-600 leading-relaxed">{row[2]}</td>
+                    <td className="p-6 text-sm text-slate-600 leading-relaxed">{row[3]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <p className="text-xs text-muted-foreground italic leading-relaxed">
+              Progress is based on understanding, not speed.<br />
+              All tracks are live, 1-to-1, mentor-led, and customized to each student.
+            </p>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-12">
