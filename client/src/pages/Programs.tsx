@@ -9,7 +9,7 @@ export default function Programs() {
     {
       title: "Coding",
       description: "Learn Python, Web Development, and block-based coding to build apps and games.",
-      outcomes: "Build a personal portfolio website, a 2D arcade game, and a data-driven Python application.",
+      outcomes: "Design and deploy a professional multi-page personal portfolio, develop a physics-based 2D arcade game, and engineer a data-driven Python application that automates real-world tasks.",
       icon: <Code className="w-10 h-10 text-white" />,
       color: "bg-blue-500",
       age: "6 and above"
@@ -17,7 +17,7 @@ export default function Programs() {
     {
       title: "Robotics",
       description: "Design and build autonomous robots using sensors, motors, and controllers.",
-      outcomes: "Design an obstacle-avoiding robot, a remote-controlled vehicle, and an automated home system.",
+      outcomes: "Architect an advanced obstacle-avoiding autonomous robot, engineer a multi-function remote-controlled vehicle with real-time feedback, and develop an integrated Smart Home automation system.",
       icon: <Bot className="w-10 h-10 text-white" />,
       color: "bg-purple-500",
       age: "8 and above"
@@ -25,7 +25,7 @@ export default function Programs() {
     {
       title: "Generative AI",
       description: "Explore the world of AI, machine learning, and create content with LLMs.",
-      outcomes: "Create an AI-powered chatbot, an image generation tool, and a personalized AI assistant.",
+      outcomes: "Develop a custom-trained AI chatbot with natural language processing, build an automated generative art tool, and create a sophisticated personalized AI productivity assistant using modern APIs.",
       icon: <Cpu className="w-10 h-10 text-white" />,
       color: "bg-cyan-500",
       age: "12 and above"
@@ -33,7 +33,7 @@ export default function Programs() {
     {
       title: "3D Modelling",
       description: "Turn imagination into 3D designs for printing and game assets.",
-      outcomes: "Design custom 3D characters, architectural prototypes, and print-ready mechanical parts.",
+      outcomes: "Master architectural visualization through detailed structural prototypes, design production-ready 3D characters for gaming, and engineer precision mechanical parts ready for professional 3D printing.",
       icon: <Box className="w-10 h-10 text-white" />,
       color: "bg-pink-500",
       age: "10 and above"
@@ -41,7 +41,7 @@ export default function Programs() {
     {
       title: "AR / VR",
       description: "Create immersive augmented and virtual reality experiences.",
-      outcomes: "Develop an interactive AR filter, a virtual gallery, and a 360-degree educational tour.",
+      outcomes: "Develop interactive AR applications with spatial awareness, build an immersive 360-degree virtual gallery, and create a fully functional VR educational environment for spatial learning.",
       icon: <Glasses className="w-10 h-10 text-white" />,
       color: "bg-orange-500",
       age: "12 and above"
