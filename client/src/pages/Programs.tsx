@@ -92,6 +92,33 @@ export default function Programs() {
                   </CardDescription>
 
                   <div className="pt-4 border-t border-slate-100">
+                    <h4 className="text-sm font-bold text-slate-900 mb-3 uppercase tracking-wider">Tracks Available</h4>
+                    <div className="space-y-3">
+                      <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-xs font-bold text-primary">Foundation Track</span>
+                          <span className="text-[10px] bg-white px-2 py-0.5 rounded-full border border-slate-200">50 Classes</span>
+                        </div>
+                        <p className="text-[11px] text-muted-foreground leading-tight">Focused on fundamentals and guided learning.</p>
+                      </div>
+                      <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-xs font-bold text-primary">Growth Track</span>
+                          <span className="text-[10px] bg-white px-2 py-0.5 rounded-full border border-slate-200">100 Classes</span>
+                        </div>
+                        <p className="text-[11px] text-muted-foreground leading-tight">Focused on real-world application and independence.</p>
+                      </div>
+                      <div className="bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="text-xs font-bold text-primary">Mastery Track</span>
+                          <span className="text-[10px] bg-white px-2 py-0.5 rounded-full border border-slate-200">150 Classes</span>
+                        </div>
+                        <p className="text-[11px] text-muted-foreground leading-tight">Focused on advanced skills and portfolio projects.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-slate-100">
                     <h4 className="text-sm font-bold text-slate-900 mb-2 uppercase tracking-wider">How 1-to-1 Works</h4>
                     <ul className="space-y-2">
                       {howItWorks.map((step, i) => (
