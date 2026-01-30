@@ -134,7 +134,7 @@ export default function BookTrial() {
     <div className="pt-24 pb-20 min-h-screen bg-slate-50 flex items-center justify-center p-4">
       <Card className="w-full max-w-lg shadow-xl border-none">
         <CardHeader className="text-center space-y-2">
-          <CardTitle className="font-heading text-3xl font-bold text-primary">Book Your Free 1-to-1 Trial Session</CardTitle>
+          <CardTitle className="font-heading text-3xl font-bold text-primary">Book Free 1-to-1 Trial</CardTitle>
           <CardDescription className="text-base">
             A personalized session to assess your child’s interests, level, and learning style.
           </CardDescription>
@@ -279,7 +279,7 @@ export default function BookTrial() {
               />
 
               <Button type="submit" className="w-full bg-gradient-tech text-white h-11 text-base font-medium shadow-lg hover:opacity-90 transition-opacity">
-                Schedule My Free Class
+                Book Free 1-to-1 Trial
               </Button>
             </form>
           </Form>

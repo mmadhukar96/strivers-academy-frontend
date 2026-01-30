@@ -1,0 +1,112 @@
+You are improving the Strivers Academy website.
+This is a global EdTech platform offering premium 1-to-1 live online STEM mentorship (Coding, Robotics, AI, 3D, AR/VR) for students aged 6–16.
+The primary audience is international parents (US, UK, Middle East).
+The goal is to strengthen clarity, trust, and conversion while keeping the existing design intact.
+
+REQUIRED CHANGES
+1. HERO SECTION
+
+Update headline to:
+“Building Future Innovators Through 1-to-1 STEM Mentorship”
+
+Ensure copy clearly mentions:
+
+1-to-1 live sessions
+
+Personalized learning
+
+Global availability
+
+Display trust line clearly:
+“Personal mentor • Flexible time zones • Project-based learning”
+
+2. CTA COPY (SITE-WIDE)
+
+Replace “Schedule My Free Class” with:
+“Book Free 1-to-1 Trial”
+
+Apply this consistently across all pages.
+
+3. ADD PARENT FAQ SECTION / PAGE
+
+Create a section titled “Frequently Asked Questions” covering:
+
+Is this 1-to-1 or group-based?
+
+Are sessions live or recorded?
+
+Who teaches the sessions?
+
+Which countries do you serve?
+
+What age group is this for?
+
+How is learning personalized?
+
+Do parents get progress updates?
+
+What will students build?
+
+How do we get started?
+
+Emphasize: 1-to-1, live, personalized, global, project-based learning.
+
+4. ADD STUDENT LEARNING JOURNEY
+
+Add a new section titled:
+“A Typical Learning Journey at Strivers Academy”
+
+Include:
+
+Month 1: Skill assessment, foundations, guided projects
+
+Month 3: Real-world projects, independence, parent update
+
+Month 6: Advanced projects, portfolio work, presentation
+
+5. PRICING POSITIONING (NO NUMBERS)
+
+Add a short note stating:
+
+Pricing is personalized
+
+Discussed after the free 1-to-1 assessment
+
+Based on student goals and pace
+
+Do NOT show prices or hourly rates.
+
+6. CONTACT PAGE – GLOBAL POSITIONING
+
+Update address to:
+“Noida, India (Global Online Sessions)”
+
+Keep phone and email unchanged.
+
+7. SOFT SOCIAL PROOF
+
+Add one subtle credibility line near “Why Choose Strivers Academy”, such as:
+
+“Designed for students across different education systems and time zones.”
+
+CONSTRAINTS
+
+Do NOT change layout, colors, or navigation
+
+Do NOT use batch-based or recorded-course language
+
+Keep tone professional, calm, and premium
+
+GOAL
+
+After updates, parents should instantly understand:
+
+This is 1-to-1
+
+This is live
+
+This is personalized
+
+This is global
+
+This is mentor-led

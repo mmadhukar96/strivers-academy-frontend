@@ -21,8 +21,7 @@ export default function Contact() {
                   <h3 className="font-heading font-bold text-lg mb-1">Visit Us</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Strivers Academy<br />
-                    Noida, Uttar Pradesh<br />
-                    India
+                    Noida, India (Global Online Sessions)
                   </p>
                 </div>
               </CardContent>

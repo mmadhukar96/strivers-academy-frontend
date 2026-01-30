@@ -113,7 +113,7 @@ export default function Programs() {
                 <CardFooter>
                   <Link href="/book-trial" className="w-full">
                     <Button variant="ghost" className="w-full justify-between group-hover:text-primary transition-colors">
-                      Book a Session <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      Book Free 1-to-1 Trial <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                 </CardFooter>

@@ -25,18 +25,18 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6 border border-primary/20">
-                🚀 Future-Ready Skills for Ages 6 and Above
+                🚀 Future-Ready Skills for Ages 6-16
               </div>
               <h1 className="font-heading text-5xl md:text-7xl font-bold leading-tight mb-6">
-                Building <span className="text-gradient-tech">Future Innovators</span>
+                Building <span className="text-gradient-tech">Future Innovators</span> Through 1-to-1 STEM Mentorship
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-                Personalized learning in Coding, Robotics, and AI where <span className="text-primary font-semibold">they become independent thinkers and creators.</span>
+                1-to-1 live sessions featuring personalized learning and global availability in Coding, Robotics, and AI. <span className="text-primary font-semibold">They become independent thinkers and creators.</span>
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/book-trial">
                   <Button size="lg" className="bg-gradient-tech hover:opacity-90 text-white rounded-full px-8 h-12 text-base shadow-xl shadow-primary/20">
-                    Book a Free Trial
+                    Book Free 1-to-1 Trial
                   </Button>
                 </Link>
                 <Link href="/programs">
@@ -139,7 +139,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Why Choose Strivers Academy?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">We don't just teach code; we teach how to think, create, and innovate.</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-2">We don't just teach code; we teach how to think, create, and innovate.</p>
+            <p className="text-sm font-medium text-primary/80">Designed for students across different education systems and time zones.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -150,7 +151,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-heading text-xl font-bold mb-3">Hands-on Robotics</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Learn by doing with physical kits and real-world sensors, not just simulations.
+                  1-to-1 mentor-led learning by doing with physical kits and real-world sensors.
                 </p>
               </CardContent>
             </Card>
@@ -162,7 +163,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-heading text-xl font-bold mb-3">Generative AI</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Master the latest AI tools and understand how Large Language Models work.
+                  Master the latest AI tools and understand how Large Language Models work in live sessions.
                 </p>
               </CardContent>
             </Card>
@@ -174,10 +175,93 @@ export default function Home() {
                 </div>
                 <h3 className="font-heading text-xl font-bold mb-3">Project Based Learning</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Build real projects from day one. Create games, apps, and working robots.
+                  Build real projects from day one with personalized guidance and portfolio development.
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Typical Learning Journey */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">A Typical Learning Journey at Strivers Academy</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">See how we transform curiosity into expertise through our 1-to-1 mentorship.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto relative">
+            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-slate-100 -translate-y-1/2 hidden md:block" />
+            
+            <div className="relative bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+              <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold relative z-10 shadow-lg">1</div>
+              <h3 className="font-heading font-bold text-xl mb-3">Month 1</h3>
+              <p className="text-sm text-muted-foreground">Skill assessment, foundations, and guided projects to build confidence.</p>
+            </div>
+
+            <div className="relative bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+              <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold relative z-10 shadow-lg">2</div>
+              <h3 className="font-heading font-bold text-xl mb-3">Month 3</h3>
+              <p className="text-sm text-muted-foreground">Real-world projects, building independence, and detailed parent updates.</p>
+            </div>
+
+            <div className="relative bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+              <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold relative z-10 shadow-lg">3</div>
+              <h3 className="font-heading font-bold text-xl mb-3">Month 6</h3>
+              <p className="text-sm text-muted-foreground">Advanced projects, portfolio work, and final project presentation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Note & FAQ Preview */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">
+            <div className="text-center mb-12">
+              <h2 className="font-heading text-3xl font-bold mb-4">Pricing & Assessment</h2>
+              <p className="text-muted-foreground">
+                Pricing is personalized and based on your child's specific goals and learning pace. 
+                We'll discuss the perfect plan for your student after the initial free 1-to-1 assessment.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              <h3 className="font-heading text-2xl font-bold text-center mb-8">Frequently Asked Questions</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-2">Is this 1-to-1 or group-based?</h4>
+                  <p className="text-sm text-muted-foreground">We focus exclusively on 1-to-1 live online mentorship for maximum personalization.</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-2">Are sessions live or recorded?</h4>
+                  <p className="text-sm text-muted-foreground">All sessions are 100% live and interactive with a personal mentor.</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-2">Who teaches the sessions?</h4>
+                  <p className="text-sm text-muted-foreground">Our mentors are industry professionals and STEM experts trained in 1-to-1 pedagogy.</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-2">Which countries do you serve?</h4>
+                  <p className="text-sm text-muted-foreground">We are a global platform serving students across all time zones (US, UK, Middle East, Asia, etc.).</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-2">What age group is this for?</h4>
+                  <p className="text-sm text-muted-foreground">Our programs are specifically designed for students aged 6–16 years.</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 mb-2">How is learning personalized?</h4>
+                  <p className="text-sm text-muted-foreground">Every student gets a unique roadmap based on their initial skill assessment and interests.</p>
+                </div>
+              </div>
+              <div className="text-center pt-8 border-t border-slate-100">
+                <Link href="/book-trial">
+                  <Button size="lg" className="bg-primary text-white rounded-full px-12">
+                    Book Free 1-to-1 Trial
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
