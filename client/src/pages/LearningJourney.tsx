@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { HelpCircle, ChevronRight, BookOpen, Rocket, Award } from "lucide-react";
-import learningRoadmapImg from "@/assets/images/learning-roadmap.png";
+import roadmapFoundation from "@/assets/images/roadmap-foundation.png";
+import roadmapGrowth from "@/assets/images/roadmap-growth.png";
+import roadmapMastery from "@/assets/images/roadmap-mastery.png";
 
 export default function LearningJourney() {
   const journey = [
@@ -92,24 +94,14 @@ export default function LearningJourney() {
 
         {/* Journey Section */}
         <section className="mb-24">
-          <h2 className="font-heading text-3xl font-bold mb-8 text-center">The Strivers Academy Learning Roadmap</h2>
+          <h2 className="font-heading text-3xl font-bold mb-12 text-center">The Strivers Academy Learning Roadmap</h2>
           
-          <div className="max-w-5xl mx-auto mb-16 relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 backdrop-blur-sm">
-              <img 
-                src={learningRoadmapImg} 
-                alt="Strivers Academy Learning Roadmap" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            {/* Visual labels overlay or floating notes could go here if needed, but the image is the hero */}
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: "Foundation Track",
                 classes: "50 Classes",
+                image: roadmapFoundation,
                 focus: "Concept clarity, logical thinking, confidence building",
                 learning: "Core STEM fundamentals, guided projects",
                 outcome: "Strong foundations and readiness to advance",
@@ -118,6 +110,7 @@ export default function LearningJourney() {
               {
                 title: "Growth Track",
                 classes: "100 Classes",
+                image: roadmapGrowth,
                 focus: "Independent application and problem solving",
                 learning: "Real-world projects, debugging, iteration",
                 outcome: "Ownership of learning and practical skills",
@@ -126,6 +119,7 @@ export default function LearningJourney() {
               {
                 title: "Mastery Track",
                 classes: "150 Classes",
+                image: roadmapMastery,
                 focus: "Advanced concepts and creative application",
                 learning: "Student-led projects, portfolio-ready work",
                 outcome: "Deep understanding and creator mindset",
@@ -140,6 +134,13 @@ export default function LearningJourney() {
                 whileHover={{ y: -5 }}
               >
                 <Card className={`h-full border-none shadow-lg hover:shadow-xl transition-all overflow-hidden border-t-4 ${track.color}`}>
+                  <div className="aspect-video overflow-hidden">
+                    <img 
+                      src={track.image} 
+                      alt={track.title} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <CardContent className="p-8">
                     <div className="flex justify-between items-start mb-6">
                       <h3 className="font-heading font-bold text-xl">{track.title}</h3>
