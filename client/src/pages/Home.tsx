@@ -183,80 +183,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured FAQ & Journey CTA */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">The Strivers Academy Learning Roadmap</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
-              A personalized 1-to-1 journey from fundamentals to mastery
-            </p>
-          </div>
+          {/* Featured FAQ & Journey CTA */}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                title: "Foundation Track",
-                classes: "50 Classes",
-                focus: "Concept clarity, logical thinking, confidence building",
-                learning: "Core STEM fundamentals, guided projects",
-                outcome: "Strong foundations and readiness to advance",
-                color: "border-blue-500/20"
-              },
-              {
-                title: "Growth Track",
-                classes: "100 Classes",
-                focus: "Independent application and problem solving",
-                learning: "Real-world projects, debugging, iteration",
-                outcome: "Ownership of learning and practical skills",
-                color: "border-purple-500/20"
-              },
-              {
-                title: "Mastery Track",
-                classes: "150 Classes",
-                focus: "Advanced concepts and creative application",
-                learning: "Student-led projects, portfolio-ready work",
-                outcome: "Deep understanding and creator mindset",
-                color: "border-cyan-500/20"
-              }
-            ].map((track, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ y: -5 }}
-                className={`bg-white p-8 rounded-3xl shadow-lg border-t-4 ${track.color.replace('/20', '')}`}
-              >
-                <div className="flex justify-between items-start mb-6">
-                  <h3 className="font-heading font-bold text-xl">{track.title}</h3>
-                  <span className="bg-slate-50 px-3 py-1 rounded-full text-xs font-bold text-primary border border-slate-100">
-                    {track.classes}
-                  </span>
-                </div>
-                <div className="space-y-4">
-                  <div>
-                    <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest block mb-1">Focus</span>
-                    <p className="text-sm text-slate-900 font-medium">{track.focus}</p>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest block mb-1">Learning</span>
-                    <p className="text-sm text-slate-600">{track.learning}</p>
-                  </div>
-                  <div className="pt-4 border-t border-slate-50">
-                    <span className="text-[10px] font-bold text-primary uppercase tracking-widest block mb-1">Outcome</span>
-                    <p className="text-sm text-primary font-bold">{track.outcome}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mb-20">
-            <p className="text-sm text-muted-foreground max-w-lg mx-auto italic">
-              Progress is based on understanding, not speed. <br />
-              All tracks are 1-to-1, live, mentor-led, and personalized to each student.
-            </p>
-          </div>
-
-          <div className="text-center">
+          <div className="text-center mt-20">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8">Ready to see their transformation?</h2>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/learning-journey">
