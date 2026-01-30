@@ -214,18 +214,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Note & FAQ Preview */}
+      {/* FAQ Preview */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">
-            <div className="text-center mb-12">
-              <h2 className="font-heading text-3xl font-bold mb-4">Pricing & Assessment</h2>
-              <p className="text-muted-foreground">
-                Pricing is personalized and based on your child's specific goals and learning pace. 
-                We'll discuss the perfect plan for your student after the initial free 1-to-1 assessment.
-              </p>
-            </div>
-
             <div className="space-y-8">
               <h3 className="font-heading text-2xl font-bold text-center mb-8">Frequently Asked Questions</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
