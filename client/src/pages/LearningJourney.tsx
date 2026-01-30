@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { HelpCircle, ChevronRight, BookOpen, Rocket, Award } from "lucide-react";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 import roadmapFoundation from "@/assets/images/roadmap-foundation.png";
 import roadmapGrowth from "@/assets/images/roadmap-growth.png";
 import roadmapMastery from "@/assets/images/roadmap-mastery.png";
