@@ -91,39 +91,73 @@ export default function LearningJourney() {
 
         {/* Journey Section */}
         <section className="mb-24">
-          <h2 className="font-heading text-3xl font-bold mb-12 text-center">A Typical Learning Journey</h2>
+          <h2 className="font-heading text-3xl font-bold mb-12 text-center">The Strivers Academy Learning Roadmap</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {journey.map((stage, idx) => (
+            {[
+              {
+                title: "Foundation Track",
+                classes: "50 Classes",
+                focus: "Concept clarity, logical thinking, confidence building",
+                learning: "Core STEM fundamentals, guided projects",
+                outcome: "Strong foundations and readiness to advance",
+                color: "border-blue-500"
+              },
+              {
+                title: "Growth Track",
+                classes: "100 Classes",
+                focus: "Independent application and problem solving",
+                learning: "Real-world projects, debugging, iteration",
+                outcome: "Ownership of learning and practical skills",
+                color: "border-purple-500"
+              },
+              {
+                title: "Mastery Track",
+                classes: "150 Classes",
+                focus: "Advanced concepts and creative application",
+                learning: "Student-led projects, portfolio-ready work",
+                outcome: "Deep understanding and creator mindset",
+                color: "border-cyan-500"
+              }
+            ].map((track, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
+                whileHover={{ y: -5 }}
               >
-                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
-                  <div className="h-2 bg-primary/20" />
+                <Card className={`h-full border-none shadow-lg hover:shadow-xl transition-all overflow-hidden border-t-4 ${track.color}`}>
                   <CardContent className="p-8">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center shadow-inner">
-                        {stage.icon}
+                    <div className="flex justify-between items-start mb-6">
+                      <h3 className="font-heading font-bold text-xl">{track.title}</h3>
+                      <span className="bg-slate-50 px-3 py-1 rounded-full text-xs font-bold text-primary border border-slate-100">
+                        {track.classes}
+                      </span>
+                    </div>
+                    <div className="space-y-4">
+                      <div>
+                        <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest block mb-1">Focus</span>
+                        <p className="text-sm text-slate-900 font-medium">{track.focus}</p>
                       </div>
                       <div>
-                        <span className="text-xs font-bold text-primary uppercase tracking-widest">{stage.month}</span>
-                        <h3 className="font-heading text-xl font-bold">{stage.title}</h3>
+                        <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest block mb-1">Learning</span>
+                        <p className="text-sm text-slate-600 leading-relaxed">{track.learning}</p>
+                      </div>
+                      <div className="pt-4 border-t border-slate-50">
+                        <span className="text-[10px] font-bold text-primary uppercase tracking-widest block mb-1">Outcome</span>
+                        <p className="text-sm text-primary font-bold">{track.outcome}</p>
                       </div>
                     </div>
-                    <ul className="space-y-4">
-                      {stage.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
-                          <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
+          </div>
+          <div className="text-center mt-12">
+            <p className="text-sm text-muted-foreground max-w-lg mx-auto italic leading-relaxed">
+              Progress is based on understanding, not speed. <br />
+              All tracks are 1-to-1, live, mentor-led, and personalized to each student.
+            </p>
           </div>
         </section>
 
