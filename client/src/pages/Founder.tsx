@@ -14,10 +14,10 @@ export default function Founder() {
                 alt="Mayank Madhukar" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-8 md:hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 md:hidden">
                 <div className="text-white">
-                  <h1 className="font-heading text-3xl font-bold">Mayank Madhukar</h1>
-                  <p className="opacity-90">Generative AI Educator</p>
+                  <h1 className="font-heading text-3xl font-bold mb-1">Mayank Madhukar</h1>
+                  <p className="text-sm font-medium opacity-90 leading-tight">Founder & Lead Educator | Global 1-to-1 STEM Mentor</p>
                 </div>
               </div>
             </div>
