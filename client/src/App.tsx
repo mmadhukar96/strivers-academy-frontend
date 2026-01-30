@@ -12,6 +12,7 @@ import Methodology from "./pages/Methodology";
 import Founder from "./pages/Founder";
 import BookTrial from "./pages/BookTrial";
 import Contact from "./pages/Contact";
+import LearningJourney from "./pages/LearningJourney";
 import Dashboard from "./pages/Dashboard";
 
 function Router() {
@@ -22,6 +23,7 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/programs" component={Programs} />
+          <Route path="/learning-journey" component={LearningJourney} />
           <Route path="/methodology" component={Methodology} />
           <Route path="/founder" component={Founder} />
           <Route path="/book-trial" component={BookTrial} />
