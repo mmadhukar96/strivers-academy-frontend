@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
 
 export function Footer() {
   return (
@@ -66,6 +67,9 @@ export function Footer() {
             © {new Date().getFullYear()} Strivers Academy. All rights reserved.
           </div>
           <div className="flex gap-4">
+            <a href="https://wa.me/919877110438" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
+              <IconBrandWhatsapp className="w-5 h-5" />
+            </a>
             <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
               <Facebook className="w-5 h-5" />
             </a>
