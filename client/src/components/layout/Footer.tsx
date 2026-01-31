@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center">
+              <div className="w-8 h-8 bg-slate-100 rounded-md flex items-center justify-center border border-slate-200">
                 <img src="/assets/logo.png" alt="Logo" className="w-6 h-6 object-contain" />
               </div>
               <span className="font-heading font-bold text-lg">Strivers Academy</span>

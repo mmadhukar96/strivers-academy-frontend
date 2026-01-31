@@ -24,7 +24,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
               <img src="/assets/logo.png" alt="Strivers Academy" className="w-8 h-8 object-contain" />
             </div>
             <span className="font-heading font-bold text-xl tracking-tight text-foreground group-hover:text-primary transition-colors">
