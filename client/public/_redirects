@@ -1,1 +1,17 @@
-/*    /index.html   200
+# ===============================
+# FORCE .org + FORCE HTTPS
+# ===============================
+
+http://striversacademy.org/* https://striversacademy.org/:splat 301!
+http://www.striversacademy.org/* https://striversacademy.org/:splat 301!
+https://www.striversacademy.org/* https://striversacademy.org/:splat 301!
+
+http://striversacademy.in/* https://striversacademy.org/:splat 301!
+https://striversacademy.in/* https://striversacademy.org/:splat 301!
+http://www.striversacademy.in/* https://striversacademy.org/:splat 301!
+https://www.striversacademy.in/* https://striversacademy.org/:splat 301!
+
+# ===============================
+# React SPA fallback (KEEP LAST)
+# ===============================
+/* /index.html 200

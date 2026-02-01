@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block duplicate domain from indexing
+Disallow: /
+
+Host: striversacademy.org
+Sitemap: https://striversacademy.org/sitemap.xml
