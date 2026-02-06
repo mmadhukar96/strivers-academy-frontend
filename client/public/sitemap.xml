@@ -29,4 +29,8 @@
     <loc>https://striversacademy.org/contact</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+     <loc>https://striversacademy.org/book-trial</loc>
+     <priority>0.9</priority>
+  </url>
 </urlset>
